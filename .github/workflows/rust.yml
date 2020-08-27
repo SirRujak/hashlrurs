@@ -11,8 +11,11 @@ env:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        os: [ubutu-latest, windows-latest, macos-latest]
 
-    runs-on: ubuntu-latest, windows-latest, macos-latest
+    runs-on: ${{ matrix.os }}
     
 
     steps:
